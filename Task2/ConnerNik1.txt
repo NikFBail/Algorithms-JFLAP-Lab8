@@ -1,0 +1,8 @@
+Transitions:
+On q2, combine the transition arrows of 0 and 1, both of which are pointing
+to q2, into 1 transition arrow, 1+0
+Next we will be removing the non-initial, non-final state q1. This means that
+the transitions from q0 to q2 are changed. The changes are:
+    From q0 to q0, the transition arrow is 1+01
+    From q0 to q2, the transition arrow is 00
+    From q2 to q2, the transition arrow is 1+0
