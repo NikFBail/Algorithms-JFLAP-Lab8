@@ -4,6 +4,7 @@ We then collapse the transitions on q4 to q4 into one transition, 1+0
 We then collapse the transitions on q3 to q3 into one transition, 1+0
 We then need to remove all non-final, non-initial states.
 These are q1, q2, q3, q4.
+
 By removing q4, the following transitions are changed, and what they are changed to:
     From q0 to q1, transition is 0
     From q0 to q2, transition is 1
@@ -13,3 +14,20 @@ By removing q4, the following transitions are changed, and what they are changed
     From q2 to q3, transition is q3
     From q2 to q5, transition is epsilon
     From q3 to q3, transition is 0+1
+
+Next remove q3. The following transitions are changed, and what they are changed to:
+    From q0 to q1, transition is 0
+    From q0 to q2, transition is 1
+    From q1 to q1, transition is 1
+    From q1 to q5, transition is epsilon
+    From q2 to q2, transition is 0
+    From q2 to q2, transition is epsilon
+
+Next remove q2. The following transitions are changed, and what they are changed to:
+    From q0 to q1, transition is 0
+    From q0 to q5, transition is 10*
+    From q1 to q1, transition is 1
+    From q1 to q5, transition is epsilon
+
+Next remove q1. The following transitions are changed, and what they are changed to:
+    From q0 to q5, transition is 10*+01*
