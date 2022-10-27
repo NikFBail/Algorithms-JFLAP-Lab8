@@ -33,7 +33,14 @@ public class RegExTester {
 		doRegExMatch("cAkE", Pattern.CASE_INSENSITIVE, "This cake is so delicious and moist.");
 		doRegExSplit("us ", "Thank you, for helping us help you help us all.");
 		doRegExReplace("\\d+", 0, "8000", "24 ounces of dark chocolate, 2 cups of sugar, 12 grams of ethyl benzene...");
-	}
+		findDFAandNFA("A dfa is a nfa but a nfa is not a dfa");
+		findInts("1234 44 -5");
+		findNegInts("-12 -3 -4 44 -5");
+		wordsStartWithT("Tyrone starts with the letter t. Like tuesday and tyrannussorus rex");
+		wordWithIorT("Potato cringe nik is a terrible person. Monday, Tuesday, wednesday. Tiger Woods");
+		splitDownTheMiddle("I don't like Nik|jk I seriously don't like Nik");
+		notToday("Today I didn't like Nik. Three days from now, I will still not like Nik");
+	}	
 
 	/**
 	 * Match the regular expression pattern against the input, with optional pattern
@@ -125,5 +132,35 @@ public class RegExTester {
 		System.out.println();
 
 		// Write your code here:
+	}
+
+	private static void findDFAandNFA(String input){
+
+		doRegExMatch("nfa|dfa", 0, input);
+
+	}
+
+	private static void findInts(String text) {
+		doRegExMatch("\\d+", 0, text);
+	}
+
+	private static void findNegInts(String text) {
+		doRegExMatch("-\\d+", 0, text);
+	}
+
+	private static void wordsStartWithT(String input){
+		doRegExMatch("\\b[t|T][a-z]*\\b", 0, input);
+	}
+
+	private static void wordWithIorT(String input){
+		doRegExMatch("[a-zA-Z]*[i|t|I|T][a-zA-Z]*", 0, input);
+	}
+
+	private static void splitDownTheMiddle(String input){
+		doRegExSplit("\\|", input);
+	}
+
+	private static void notToday(String input){
+		doRegExReplace("today", Pattern.CASE_INSENSITIVE, "yesterday", input);
 	}
 }
